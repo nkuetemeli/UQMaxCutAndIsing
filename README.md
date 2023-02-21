@@ -6,14 +6,14 @@ This code can be used to reproduce the experiments and results of the paper
 Given an input graph 
 $\mathcal G = (\mathcal S, \mathcal E, \mathcal{C})$ 
 with 
-$ \mathcal S = \left\{s_1, \ldots, s_n\right\} $, 
-$ \mathcal E \subseteq \mathcal S \times \mathcal S $ 
+$\mathcal S = \left\{s_1, \ldots, s_n\right\}$, 
+$\mathcal E \subseteq \mathcal S \times \mathcal S$
 and 
-$ \mathcal{C} : \mathcal E \to \R $ with $\mathcal{C}(s_i, s_j) =: \mathcal{C}_{ij}$ 
-being a cost function on $ \mathcal E $,
+$\mathcal{C} : \mathcal E \to \R$ with $\mathcal{C}(s_i, s_j) =: \mathcal{C}_{ij}$
+being a cost function on$\mathcal E$,
 the `MaxCut` class instance compute an outputs an approximate solution for the graph partitioning problem.
 The output is an approximate solution of the ground state of the Ising model 
-or if $\mathcal{C}_{ii} = 0$ for all $i$, that of the weighted maximum cut problem.
+or if$\mathcal{C}_{ii} = 0$for all$i$, that of the weighted maximum cut problem.
 
 # Install
 The code depends on the Python packages 
