@@ -1,6 +1,7 @@
 # Universal Quantum Algorithms <br/> For The Weighted Maximum Cut Problem And The Ising Model
 This code can be used to reproduce the experiments and results of the paper
 **Universal Quantum Algorithms For The Weighted Maximum Cut Problem And The Ising Model**.
+$x$ with $f(x) = 12$
 
 Given an input graph 
 $ \mathcal G = (\mathcal S, \mathcal E, \mathcal{C}) $ 
