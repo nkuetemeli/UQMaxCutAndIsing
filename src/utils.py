@@ -83,7 +83,7 @@ class Optimizer:
         self.eps = 1e-10
 
     def get_alpha(self, *args, **kwargs):
-        alpha = self.armijo(*args, **kwargs) if self.backtracking else np.sqrt(self.num_variables/(self.iter+1))
+        alpha = self.armijo(*args, **kwargs) if self.backtracking else np.sqrt(self.num_variables*np.pi/2) * np.exp(-(4*self.iter**2)/(self.max_iter**2))
         return alpha
 
     def armijo(self, val, grad, search_direction, x, rho=.5, c1=1e-4):

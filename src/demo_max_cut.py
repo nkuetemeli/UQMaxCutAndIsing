@@ -142,14 +142,14 @@ def benchmark_mc(file_name):
     optimization_steps = {1: 'vanilla',
                           2: 'adam'}
 
-    max_iter = 30
-    entanglement = entanglements[2]
+    max_iter = 20
+    entanglement = entanglements[1]
     gradient_method = gradient_methods[2]
     optimization_step = optimization_steps[1]
     backtraking = False
 
-    alpha_const_qaoa = 1.
-    alpha_const_mc = 1.
+    alpha_const_qaoa = 2.
+    alpha_const_mc = 2.
     for n in ns:
         ratio = {'qaoa_gradient': [], 'qaoa_black_box': [], 'dwave': [], 'mc': []}
         index = {'qaoa_gradient': [], 'qaoa_black_box': [], 'dwave': [], 'mc': []}
@@ -225,8 +225,8 @@ def benchmark_ising(file_name):
     optimization_steps = {1: 'vanilla',
                           2: 'adam'}
 
-    max_iter = 30
-    entanglement = entanglements[2]
+    max_iter = 20
+    entanglement = entanglements[1]
     gradient_method = gradient_methods[2]
     optimization_step = optimization_steps[1]
     backtracking = False
@@ -274,8 +274,9 @@ if __name__ == '__main__':
 
     # Benchmarking UQMC with QAOA and D-Wave
     # Lasts about 3 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
-    benchmark_mc(file_name='experiment_benchmark_mc')
+    # benchmark_mc(file_name='experiment_benchmark_mc')
 
     # Benchmarking UQIM with D-Wave
     # Lasts about 2 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
-    benchmark_ising(file_name='experiment_benchmark_ising')
+    # benchmark_ising(file_name='experiment_benchmark_ising')
+    pass

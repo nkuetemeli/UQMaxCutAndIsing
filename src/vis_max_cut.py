@@ -76,7 +76,7 @@ def vis_eval_mc(save=True):
 
         error_costs = {'positive_weights': None, 'positive_negative_weights': None}
         experiments = ['positive_weights', 'positive_negative_weights']
-        titles = [r'$C_{ij} \in \mathbb{R}_{\geq0}$', r'$C_{ij} \in \mathbb{R}$']
+        titles = [r'$C_{ij} \in \mathbb{R}_{> 0}$', r'$C_{ij} \in \mathbb{R}$']
 
         fig = plt.figure()
         fig.set_size_inches(9, 5)
@@ -122,7 +122,8 @@ def vis_eval_mc(save=True):
             ax.plot_surface(xx, yy, acosts_arranged, color=acosts_color, rstride=10, cstride=5, alpha=.5,
                             zorder=zorder_fg)
             ax.plot(xx[baseline_index, :], yy[baseline_index, :], acosts_arranged[baseline_index, :],
-                    color=baseline_color, zorder=zorder_fg, linewidth=.5)
+                    color=baseline_color, zorder=zorder_fg, linewidth=1.5)
+
             ax.xaxis.labelpad = -1
             ax.yaxis.labelpad = -1
             ax.zaxis.labelpad = -1
@@ -139,11 +140,11 @@ def vis_eval_mc(save=True):
 
         costs_patch = mpatches.Patch(color=costs_color, label=r'$C$: True costs')
         acosts_patch = mpatches.Patch(color=acosts_color, label=r'$K \cdot \sin(\tilde C)$: Transformed costs')
-        baseline_patch = mlines.Line2D([], [], color=baseline_color, label=r'selected profile')
+        baseline_patch = mlines.Line2D([], [], color=baseline_color, label=r'Selected profile')
         fig.legend(handles=[costs_patch, acosts_patch, baseline_patch], loc='upper center', ncol=3, fontsize=font_size)
 
         if save:
-            save_fig(fig, path=path.join(results_folder, 'images/experiment_K.pdf'))
+            save_fig(fig, path=path.join('../', 'images/experiment_K.pdf'))
         plt.show()
         return
 
@@ -159,7 +160,7 @@ def vis_eval_mc(save=True):
 
         error_costs = {'positive_weights': None, 'positive_negative_weights': None}
         experiments = ['positive_weights', 'positive_negative_weights']
-        titles = [r'$C_{ij} \in \mathbb{R}_{\geq0}$', r'$C_{ij} \in \mathbb{R}$']
+        titles = [r'$C_{ij} \in \mathbb{R}_{> 0}$', r'$C_{ij} \in \mathbb{R}$']
 
         fig = plt.figure()
         fig.set_size_inches(9, 5)
@@ -303,7 +304,7 @@ def vis_benchmark_mc(file_name, save=False):
     fig.legend(handles=[qaoa_gradient_patch, qaoa_black_box_patch, dwave_patch, mc_patch], loc='upper center', ncol=4, fontsize=font_size)
 
     if save:
-        save_fig(fig, path=path.join(results_folder, 'images/experiment_benchmark_mc.pdf'))
+        save_fig(fig, path=path.join('../', 'images/experiment_benchmark_mc.pdf'))
     fig.suptitle(file_name, y=.08)
     plt.show()
     return
@@ -384,7 +385,7 @@ def vis_benchmark_ising(file_name, save=False):
     fig.legend(handles=[dwave_patch, mc_patch], loc='upper center', ncol=4, fontsize=font_size)
 
     if save:
-        save_fig(fig, path=path.join(results_folder, 'images/experiment_benchmark_ising.pdf'))
+        save_fig(fig, path=path.join('../', 'images/experiment_benchmark_ising.pdf'))
     fig.suptitle(file_name, y=.08)
     plt.show()
     return
@@ -395,12 +396,12 @@ def vis_benchmark_ising(file_name, save=False):
 
 if __name__ == '__main__':
     # Visualize the brute force experiment
-    # vis_eval_mc(save=False)
+    vis_eval_mc(save=False)
 
     # Visualize the MaxCut benchmark experiment
-    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
+    # vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
 
     # Visualize the Ising benchmark experiment
-    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
+    # vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
 
 

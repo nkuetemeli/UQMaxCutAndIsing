@@ -43,9 +43,9 @@ class MaxCut():
         G = self.get_graph(n, p, weight_bounds) if G is None else G
         adjacency = np.triu(nx.adjacency_matrix(G).toarray())
         if entanglement == 'bell':
-            thetas_init = np.zeros(n-1,) if thetas_init is None else thetas_init
+            thetas_init = np.ones(n-1,) if thetas_init is None else thetas_init
         else:
-            thetas_init = np.zeros(n,) if thetas_init is None else thetas_init
+            thetas_init = np.ones(n,) if thetas_init is None else thetas_init
 
         self.G = G
         self.n = n
@@ -344,10 +344,10 @@ if __name__ == '__main__':
                        4: 'spsa'}
     optimization_step = {1: 'vanilla',
                          2: 'adam'}
-    mc = MaxCut(n=n, p=p, entanglement=entanglement[1], brute_force=False, exact_costs=True)
+    mc = MaxCut(n=n, p=p, entanglement=entanglement[1], brute_force=False, exact_costs=False)
     mc.draw_graph()
     mc.draw_circuit()
-    mc.optimize(max_iter=10, alpha_const=1., backtracking=False, gradient_method=gradient_method[2], optimization_step=optimization_step[1], fine_tuning=False)
+    mc.optimize(max_iter=20, alpha_const=1., backtracking=False, gradient_method=gradient_method[2], optimization_step=optimization_step[1], fine_tuning=False)
     mc.result()
 
 

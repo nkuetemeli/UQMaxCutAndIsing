@@ -8,7 +8,7 @@ class QAOABenchmark(MaxCut):
         super().__init__(n=n, p=p, seed=seed, brute_force=False)
 
         self.reps = int(np.ceil(self.n/2)) if reps is None else reps
-        self.params_init = np.zeros(2 * self.reps, ) if params_init is None else params_init
+        self.params_init = np.ones(2 * self.reps, ) if params_init is None else params_init
         self.params_opt = self.params_init
 
         self.qaoa_history = {'loss': [], 'norm_grad': [], 'ratio': [], 'index': []}
@@ -23,14 +23,14 @@ class QAOABenchmark(MaxCut):
     def UC(self, gamma):
         circuit = QuantumCircuit(self.n, name=rf' U(C, $\gamma$) ')
         for u, v in self.G.edges:
-            self.entangled_rz(circuit, qubit_1=u, qubit_2=v, angle=2*self.G[u][v]['weight'] * gamma)
+            self.entangled_rz(circuit, qubit_1=u, qubit_2=v, angle=self.G[u][v]['weight'] * gamma)
             circuit.barrier()
         return circuit
 
     def UB(self, beta):
         circuit = QuantumCircuit(self.n, name=rf' U(B, $\beta$) ')
         for x in range(self.n):
-            circuit.rx(2*beta, x)
+            circuit.rx(beta, x)
         return circuit
 
     def qaoa(self, params):
