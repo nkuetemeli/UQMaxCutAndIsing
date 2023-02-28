@@ -16,7 +16,7 @@ and [dwave](https://docs.ocean.dwavesys.com/projects/system/en/latest/installati
 
 - Once you satisfied the dependency, run `pip install .` inside the directory.
 
-Move to the `src` folder to run the subsequent command.
+Move to the `src` folder to run the subsequent commands.
 
 # Example
 
