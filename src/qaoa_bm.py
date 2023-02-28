@@ -8,7 +8,7 @@ class QAOABenchmark(MaxCut):
         super().__init__(n=n, p=p, seed=seed, brute_force=False)
 
         self.reps = int(np.ceil(self.n/2)) if reps is None else reps
-        self.params_init = np.ones(2 * self.reps, ) if params_init is None else params_init
+        self.params_init = np.zeros(2 * self.reps, ) if params_init is None else params_init
         self.params_opt = self.params_init
 
         self.qaoa_history = {'loss': [], 'norm_grad': [], 'ratio': [], 'index': []}

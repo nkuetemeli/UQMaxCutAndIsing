@@ -160,7 +160,7 @@ def vis_eval_mc(save=True):
 
         error_costs = {'positive_weights': None, 'positive_negative_weights': None}
         experiments = ['positive_weights', 'positive_negative_weights']
-        titles = [r'$C_{ij} \in \mathbb{R}_{> 0}$', r'$C_{ij} \in \mathbb{R}$']
+        titles = [r'$C_{ij} \in \mathbf{R}_{> 0}$', r'$C_{ij} \in \mathbf{R}$']
 
         fig = plt.figure()
         fig.set_size_inches(9, 5)
@@ -201,7 +201,7 @@ def vis_eval_mc(save=True):
         ax.set_ylabel('Measurement Error')
         plt.legend()
         if save:
-            save_fig(fig, path=path.join(results_folder, 'images/experiment_K.pdf'))
+            save_fig(fig, path=path.join('../', 'images/experiment_num_shots.pdf'))
         plt.show()
         return
 
@@ -399,9 +399,9 @@ if __name__ == '__main__':
     vis_eval_mc(save=False)
 
     # Visualize the MaxCut benchmark experiment
-    # vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
+    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
 
     # Visualize the Ising benchmark experiment
-    # vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
+    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
 
 

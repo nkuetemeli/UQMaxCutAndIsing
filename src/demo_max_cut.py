@@ -270,13 +270,13 @@ def main():
 if __name__ == '__main__':
     # Brute force the problem and verify the correctness of the transformed costs
     # Lasts about 2 days to brute force 10 instances of a 10 node fully connected graph
-    # eval_mc()
+    eval_mc()
 
     # Benchmarking UQMC with QAOA and D-Wave
     # Lasts about 3 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
-    # benchmark_mc(file_name='experiment_benchmark_mc')
+    benchmark_mc(file_name='experiment_benchmark_mc')
 
     # Benchmarking UQIM with D-Wave
     # Lasts about 2 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
-    # benchmark_ising(file_name='experiment_benchmark_ising')
+    benchmark_ising(file_name='experiment_benchmark_ising')
     pass

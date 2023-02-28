@@ -43,9 +43,9 @@ class MaxCut():
         G = self.get_graph(n, p, weight_bounds) if G is None else G
         adjacency = np.triu(nx.adjacency_matrix(G).toarray())
         if entanglement == 'bell':
-            thetas_init = np.ones(n-1,) if thetas_init is None else thetas_init
+            thetas_init = np.zeros(n-1,) if thetas_init is None else thetas_init
         else:
-            thetas_init = np.ones(n,) if thetas_init is None else thetas_init
+            thetas_init = np.zeros(n,) if thetas_init is None else thetas_init
 
         self.G = G
         self.n = n
@@ -331,7 +331,7 @@ class MaxCut():
 
 if __name__ == '__main__':
     plt.close('all')
-    n = 10
+    n = 5
     p = (1., 0.)
     entanglement = {1: None,
                     2: 'bell',
