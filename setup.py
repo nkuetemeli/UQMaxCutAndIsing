@@ -8,5 +8,5 @@ setup(name='UQMaxCutAndIsing',
       author='Natacha Kuete Meli',
       author_email='meli@mic.uni-luebeck.de',
       url='https://#',
-      packages=['../src'],
+      packages=['src'],
      )
