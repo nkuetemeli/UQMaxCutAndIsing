@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%.3g" % x))
-from utils import *
+from src.utils import *
 
 # Importing standard Qiskit libraries
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile, Aer, IBMQ
@@ -275,10 +275,10 @@ class MaxCut():
         index = max(counts, key=counts.get)
         print('\nmy results'.upper())
         print(self.expected_cut)
-        print(f'Obtained: {self.cut(index)[0]} and {self.cut(index)[1]}')
-        print(f'   Ratio: {self.history["ratio"][-1]}')
-        print(f'   Index: {self.history["index"][-1]}')
-        print(f'    Time: {self.time}')
+        print(f'       Obtained Cut: {self.cut(index)[0]} and {self.cut(index)[1]}')
+        print(f'Approximation Ratio: {self.history["ratio"][-1]}')
+        print(f'Approximation Index: {self.history["index"][-1]}')
+        print(f'     Execution Time: {self.time} seconds')
 
         # Plot Histogramm
         plot_histogram(counts,
