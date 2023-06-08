@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from max_cut import *
+from src.max_cut import *
 
 
 class QAOABenchmark(MaxCut):

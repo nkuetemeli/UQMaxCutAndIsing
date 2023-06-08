@@ -3,7 +3,7 @@ import dwave.inspector
 import numpy as np
 from dwave.system import DWaveSampler, EmbeddingComposite
 import time
-from max_cut import *
+from src.max_cut import *
 
 
 class DWAVEBenchmark(MaxCut):

@@ -5,15 +5,15 @@ np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda 
 from src.utils import *
 
 # Importing standard Qiskit libraries
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile, Aer, IBMQ
-from qiskit.extensions import UnitaryGate
-from qiskit.quantum_info import Statevector, Operator
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile, Aer
+from qiskit.quantum_info import Operator
 from qiskit.visualization import plot_histogram
 from qiskit.transpiler.passes import RemoveBarriers
 import time
 
-# Loading your IBM Quantum account(s)
-#provider = IBMQ.load_account()
+
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 font_size = 10

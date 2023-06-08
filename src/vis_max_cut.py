@@ -2,7 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-from demo_max_cut import *
+from src.demo_max_cut import *
 import matplotlib.patches as mpatches
 import matplotlib.lines as mlines
 import matplotlib.colors as mcolors
@@ -292,15 +292,15 @@ def vis_benchmark_mc(file_name, save=False):
     plot_benchmark_index(ax['D'], x_start=10, index_data=index_data('qaoa_black_box'), color=qaoa_black_box_color)
     plot_benchmark_index(ax['D'], x_start=20, index_data=index_data('dwave'), color=dwave_color)
     plot_benchmark_index(ax['D'], x_start=30, index_data=index_data('mc'), color=mc_color)
-    ax['D'].set_xticks([3, 13, 23, 33], ['QAOA (GD)', 'QAOA (Cobyla)', 'D-Wave', 'UQMaxCut (GD) [Ours]'])
+    ax['D'].set_xticks([3, 13, 23, 33], ['QAOA (NGD)', 'QAOA (Cobyla)', 'D-Wave', 'UQMaxCut (NGD) [Ours]'])
     ax['D'].set_yticks([0, .25, .50, .75, 1.], [0, 25, 50, 75, 100])
     ax['D'].set_ylim([0, 1.3])
     ax['D'].set_ylabel(f'Index $(\%)$')
 
-    qaoa_gradient_patch = mpatches.Patch(color=qaoa_gradient_color, label=r'QAOA (GD)')
+    qaoa_gradient_patch = mpatches.Patch(color=qaoa_gradient_color, label=r'QAOA (NGD)')
     qaoa_black_box_patch = mlines.Line2D([], [], color=qaoa_black_box_color, label=r'QAOA (Cobyla)')
     dwave_patch = mlines.Line2D([], [], color=dwave_color, label=r'D-Wave')
-    mc_patch = mpatches.Patch(color=mc_color, label=r'UQMaxCut (GD) [Ours]')
+    mc_patch = mpatches.Patch(color=mc_color, label=r'UQMaxCut (NGD) [Ours]')
     fig.legend(handles=[qaoa_gradient_patch, qaoa_black_box_patch, dwave_patch, mc_patch], loc='upper center', ncol=4, fontsize=font_size)
 
     if save:
@@ -374,14 +374,14 @@ def vis_benchmark_ising(file_name, save=False):
                                  np.mean(np.array(results[str(ns[2])]['index'][method])[:, -1])]
     plot_benchmark_index(ax['D'], x_start=10, index_data=index_data('dwave'), color=dwave_color)
     plot_benchmark_index(ax['D'], x_start=25, index_data=index_data('mc'), color=mc_color)
-    ax['D'].set_xticks([13, 28], ['D-Wave', 'UQIsing (GD) [Ours]'])
+    ax['D'].set_xticks([13, 28], ['D-Wave', 'UQIsing (NGD) [Ours]'])
     ax['D'].set_yticks([0, .25, .50, .75, 1.], [0, 25, 50, 75, 100])
     ax['D'].set_xlim([3, 38])
     ax['D'].set_ylim([0, 1.3])
     ax['D'].set_ylabel(f'Index $(\%)$')
 
     dwave_patch = mlines.Line2D([], [], color=dwave_color, label=r'D-Wave')
-    mc_patch = mpatches.Patch(color=mc_color, label=r'UQIsing (GD) [Ours]')
+    mc_patch = mpatches.Patch(color=mc_color, label=r'UQIsing (NGD) [Ours]')
     fig.legend(handles=[dwave_patch, mc_patch], loc='upper center', ncol=4, fontsize=font_size)
 
     if save:
@@ -396,7 +396,7 @@ def vis_benchmark_ising(file_name, save=False):
 
 if __name__ == '__main__':
     # Visualize the brute force experiment
-    vis_eval_mc(save=False)
+    # vis_eval_mc(save=False)
 
     # Visualize the MaxCut benchmark experiment
     vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)

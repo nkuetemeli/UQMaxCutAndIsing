@@ -1,6 +1,6 @@
 from max_cut import *
-from qaoa_bm import *
-from dwave_bm import *
+from src.qaoa_bm import *
+from src.dwave_bm import *
 from os import path
 import json
 
@@ -231,18 +231,19 @@ def benchmark_ising(file_name):
     optimization_step = optimization_steps[1]
     backtracking = False
 
-    alpha_const_mc = 1.
+    alpha_const_mc = 2.
     for n in ns:
         ratio = {'dwave': [], 'mc': []}
         index = {'dwave': [], 'mc': []}
         time = {'dwave': [], 'mc': []}
+        thetas_init = np.pi/2 + np.zeros(n, )
         for sim in range(num_simulations):
             seed = sim
 
             dwave_bm = DWAVEBenchmark(n=n, p=p, seed=seed)
             dwave_bm.solve(inspector=False)
 
-            mc = MaxCut(n=n, p=p, entanglement=entanglement, seed=seed)
+            mc = MaxCut(n=n, p=p, thetas_init=thetas_init, entanglement=entanglement, seed=seed)
             mc.optimize(max_iter=max_iter, alpha_const=alpha_const_mc, backtracking=backtracking, gradient_method=gradient_method, optimization_step=optimization_step)
 
             ratio['dwave'].append(dwave_bm.dwave_history['ratio'])
@@ -270,11 +271,11 @@ def main():
 if __name__ == '__main__':
     # Brute force the problem and verify the correctness of the transformed costs
     # Lasts about 2 days to brute force 10 instances of a 10 node fully connected graph
-    eval_mc()
+    # eval_mc()
 
     # Benchmarking UQMC with QAOA and D-Wave
     # Lasts about 3 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
-    benchmark_mc(file_name='experiment_benchmark_mc')
+    # benchmark_mc(file_name='experiment_benchmark_mc')
 
     # Benchmarking UQIM with D-Wave
     # Lasts about 2 hours to benchmark 20 instances of 3, 5 and 10 node fully connected graphs
