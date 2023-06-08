@@ -399,9 +399,9 @@ if __name__ == '__main__':
     # vis_eval_mc(save=False)
 
     # Visualize the MaxCut benchmark experiment
-    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
+    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=True)
 
     # Visualize the Ising benchmark experiment
-    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
+    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=True)
 
 
