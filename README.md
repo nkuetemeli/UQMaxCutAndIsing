@@ -1,4 +1,4 @@
-# A Universal Quantum Algorithms For MaxCut And Ising Problems
+# A Universal Quantum Algorithm For MaxCut And Ising
 This code can be used to reproduce the experiments and results of the paper <br/>
 **A Universal Quantum Algorithm for Weighted Maximum Cut and Ising Problems**.
 
