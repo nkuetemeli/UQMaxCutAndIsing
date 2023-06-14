@@ -27,7 +27,7 @@ Move to the `src` folder to run the subsequent commands.
 # Run demos
 
     # Brute force the problem and verify the correctness of the transformed costs
-    # May last a several hours: Consider in-comment in the file the experiment your are interested in.
+    # May last several hours: Consider in-comment in the file the experiment your are interested in.
     python demo_max_cut.py
 
 # Visualize demos
