@@ -1,4 +1,4 @@
-from max_cut import *
+from src.max_cut import *
 from src.qaoa_bm import *
 from src.dwave_bm import *
 from os import path

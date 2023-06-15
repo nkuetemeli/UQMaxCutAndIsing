@@ -1,9 +1,9 @@
-# Universal Quantum Algorithms For MaxCut And Ising
+# A Universal Quantum Algorithm For MaxCut And Ising
 This code can be used to reproduce the experiments and results of the paper <br/>
-**Universal Quantum Algorithms For The Weighted Maximum Cut Problem And The Ising Model**.
+**A Universal Quantum Algorithm for Weighted Maximum Cut and Ising Problems**.
 
 
-Given an input graph the `MaxCut` class instance computes an outputs an approximate solution for the graph partitioning problem.
+Given an input graph, the `MaxCut` class instance computes and outputs an approximate solution for the graph partitioning problem.
 
 # Install
 The code depends on the Python packages 
@@ -27,7 +27,7 @@ Move to the `src` folder to run the subsequent commands.
 # Run demos
 
     # Brute force the problem and verify the correctness of the transformed costs
-    # May last a several hours: Consider in-comment in the file the experiment your are interested in.
+    # May last several hours: Consider in-comment in the file the experiment your are interested in.
     python demo_max_cut.py
 
 # Visualize demos
