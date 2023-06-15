@@ -12,6 +12,7 @@ class DWAVEBenchmark(MaxCut):
         self.num_reads = 50
         self.dwave_history = {'loss': [], 'norm_grad': [], 'ratio': [], 'index': []}
         self.dwave_time = None
+        self.classical_expectation = self.dwave_classical_expectation
 
     def dwave_classical_expectation(self, counts):
         cost = 0
