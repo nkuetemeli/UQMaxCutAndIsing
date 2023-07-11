@@ -396,12 +396,12 @@ def vis_benchmark_ising(file_name, save=False):
 
 if __name__ == '__main__':
     # Visualize the brute force experiment
-    vis_eval_mc(save=True)
+    # vis_eval_mc(save=True)
 
     # Visualize the MaxCut benchmark experiment
-    # vis_benchmark_mc(file_name='experiment_benchmark_mc', save=True)
+    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=False)
 
     # Visualize the Ising benchmark experiment
-    # vis_benchmark_ising(file_name='experiment_benchmark_ising', save=True)
+    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=False)
 
 
