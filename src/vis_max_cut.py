@@ -139,7 +139,7 @@ def vis_eval_mc(save=True):
             ax.set_title(title)
 
         costs_patch = mpatches.Patch(color=costs_color, label=r'$C$: True costs')
-        acosts_patch = mpatches.Patch(color=acosts_color, label=r'$K \cdot \sin(\tilde C)$: Transformed costs')
+        acosts_patch = mpatches.Patch(color=acosts_color, label=r'$K \cdot \sin(\hat C)$: Transformed costs')
         baseline_patch = mlines.Line2D([], [], color=baseline_color, label=r'Selected profile')
         fig.legend(handles=[costs_patch, acosts_patch, baseline_patch], loc='upper center', ncol=3, fontsize=font_size)
 
@@ -396,12 +396,12 @@ def vis_benchmark_ising(file_name, save=False):
 
 if __name__ == '__main__':
     # Visualize the brute force experiment
-    # vis_eval_mc(save=False)
+    vis_eval_mc(save=True)
 
     # Visualize the MaxCut benchmark experiment
-    vis_benchmark_mc(file_name='experiment_benchmark_mc', save=True)
+    # vis_benchmark_mc(file_name='experiment_benchmark_mc', save=True)
 
     # Visualize the Ising benchmark experiment
-    vis_benchmark_ising(file_name='experiment_benchmark_ising', save=True)
+    # vis_benchmark_ising(file_name='experiment_benchmark_ising', save=True)
 
 
