@@ -2,7 +2,9 @@
 This code can be used to reproduce the experiments and results of the paper <br/>
 **A Universal Quantum Algorithm for Weighted Maximum Cut and Ising Problems**.
 
-    Kuete Meli, N., Mannel, F. & Lellmann, J. A universal quantum algorithm for weighted maximum cut and Ising problems. Quantum Inf Process 22, 279 (2023). https://doi.org/10.1007/s11128-023-04025-x
+    Kuete Meli, N., Mannel, F. & Lellmann, J. 
+    A universal quantum algorithm for weighted maximum cut and Ising problems. 
+    Quantum Inf Process 22, 279 (2023). https://doi.org/10.1007/s11128-023-04025-x
 
 Given an input graph, the `MaxCut` class instance computes and outputs an approximate solution for the graph partitioning problem.
 A demo Notebook is provided in the file `DEMO.ipynb`.
